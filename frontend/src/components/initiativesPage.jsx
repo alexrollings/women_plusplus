@@ -124,7 +124,7 @@ export default function InitiativesPage() {
             noWrap
             sx={{ flexGrow: 1 }}
           >
-            Dashboard
+            Initiatives
           </Typography>
 
           ImpactPulse
@@ -170,7 +170,7 @@ export default function InitiativesPage() {
             <Initiatives />
           </Paper>
         </Grid>
-      
+
       <Copyright sx={{ pt: 4 }} />
     </Container>
 
