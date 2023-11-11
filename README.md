@@ -2,6 +2,12 @@
 
 ===
 
+## Getting Started
+
+1
+
+
+
 ## Steps
 
 1. Use this repository as a template (or Fork it)
@@ -14,4 +20,3 @@
 * Main branch saved for validated, tested code. Only merge with main from dev branch.
 * Each collaborator creates own branch from dev and merges to dev using pull requests.
 * Once dev is validated, merge changes with main.
-
