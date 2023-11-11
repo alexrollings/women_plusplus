@@ -5,16 +5,48 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import LogoutIcon from '@mui/icons-material/Logout';
+import SportsScoreIcon from "@mui/icons-material/SportsScore";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import CollectionsIcon from "@mui/icons-material/Collections";
+import AssessmentIcon from "@mui/icons-material/Assessment";
 
 import { Link } from "@mui/material";
 
 export const mainListItems = (
   <React.Fragment>
+    <Link href="/dashboard" underline="none" color="black">
+      <ListItemButton>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Dashboard" />
+      </ListItemButton>
+    </Link>
     <ListItemButton>
       <ListItemIcon>
-        <DashboardIcon />
+        <SportsScoreIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Goals" />
+    </ListItemButton>
+    <Link href="/initiatives" underline="none" color="black">
+      <ListItemButton>
+        <ListItemIcon>
+          <BusinessCenterIcon />
+        </ListItemIcon>
+        <ListItemText primary="Initiatives" />
+      </ListItemButton>
+    </Link>
+    <ListItemButton>
+      <ListItemIcon>
+        <CollectionsIcon />
+      </ListItemIcon>
+      <ListItemText primary="Collect" />
+    </ListItemButton>
+    <ListItemButton>
+      <ListItemIcon>
+        <AssessmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Reports" />
     </ListItemButton>
   </React.Fragment>
 );

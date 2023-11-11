@@ -5,46 +5,51 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Title from './Title';
+import AddIcon from "@mui/icons-material/Add";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Modal from "@mui/material/Modal";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Title from "./Title";
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(id, date, name, description) {
+  return { id, date, name, description};
 }
 
 const rows = [
   createData(
     0,
-    '16 Mar, 2019',
-    'Elvis Presley',
-    'Tupelo, MS',
-    'VISA ⠀•••• 3719',
-    312.44,
+    "16 Mar, 2019",
+    "Elvis Presley",
+    "description"
   ),
   createData(
     1,
-    '16 Mar, 2019',
-    'Paul McCartney',
-    'London, UK',
-    'VISA ⠀•••• 2574',
-    866.99,
+    "16 Mar, 2019",
+    "Paul McCartney",
+    "description"
   ),
-  createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
+  createData(
+    2,
+    "16 Mar, 2019",
+    "Tom Scholz",
+    "description"
+  ),
   createData(
     3,
-    '16 Mar, 2019',
-    'Michael Jackson',
-    'Gary, IN',
-    'AMEX ⠀•••• 2000',
-    654.39,
+    "16 Mar, 2019",
+    "Michael Jackson",
+    "description"
   ),
   createData(
     4,
-    '15 Mar, 2019',
-    'Bruce Springsteen',
-    'Long Branch, NJ',
-    'VISA ⠀•••• 5919',
-    212.79,
+    "15 Mar, 2019",
+    "Bruce Springsteen",
+    "description"
   ),
 ];
 
@@ -52,18 +57,93 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  borderRadius: '5px',
+  p: 4,
+};
+
+
+
 export default function Initiatives() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const [name, setName] = useState("");
+  const [itemDescription, setItemDescription] = useState("")
+
+  const handleAddInit = () => {
+    rows.push(createData(
+      rows.length,
+      new Date().toLocaleDateString(),
+      name,
+      itemDescription
+    ))
+    handleClose()
+  }
+
   return (
     <React.Fragment>
-      <Title>Recent Initiatives</Title>
+      <Stack direction="row" justifyContent="space-between">
+        <Title>Recent Initiatives</Title>
+        <Button onClick={handleOpen}>
+          <AddIcon fontSize="large" />
+        </Button>
+      </Stack>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Add a new Initiative
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Stack spacing={4}>
+            <TextField
+              id="standard-basic"
+              label="Name of Initiative"
+              variant="standard"
+              value={name}
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+              />
+            <TextField
+              id="outlined-multiline-static"
+              label="Details"
+              multiline
+              rows={4}
+              defaultValue="Please add your initiative details here."
+              value={itemDescription}
+              onChange={(event) => {
+                setItemDescription(event.target.value);
+              }}
+              />
+              <Button variant="contained" onClick={handleAddInit}>Add</Button>
+            </Stack>
+          </Typography>
+        </Box>
+      </Modal>
+
       <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Description</TableCell>
+
           </TableRow>
         </TableHead>
         <TableBody>
@@ -71,16 +151,11 @@ export default function Initiatives() {
             <TableRow key={row.id}>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
+              <TableCell>{row.description}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
-      </Link>
     </React.Fragment>
   );
 }
