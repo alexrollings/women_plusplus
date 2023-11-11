@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
 import Navigation from './components/navigation';
-import Dashboard from './components/initiativesPage';
 import InitiativesPage from './components/initiativesPage';
+import SideSignIn from './components/sideSignIn';
 import SignIn from './components/login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Initiatives from './components/Initiatives';
+
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SignIn />} />
+        <Route path="/" element={<SideSignIn />} />
         <Route path="/dashboard" element={<Navigation />} />
         <Route path='/initiatives' element={<InitiativesPage />} />
       </Routes>

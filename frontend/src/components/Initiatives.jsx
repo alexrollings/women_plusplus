@@ -105,52 +105,54 @@ export default function Initiatives() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Add a new Initiative
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          <Stack spacing={4}>
-            <TextField
-              id="standard-basic"
-              label="Name of Initiative"
-              variant="standard"
-              value={name}
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
+            <Stack spacing={4}>
+              <TextField
+                id="standard-basic"
+                label="Name of Initiative"
+                variant="standard"
+                value={name}
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
               />
-            <TextField
-              id="outlined-multiline-static"
-              label="Details"
-              multiline
-              rows={4}
-              defaultValue="Please add your initiative details here."
-              value={itemDescription}
-              onChange={(event) => {
-                setItemDescription(event.target.value);
-              }}
+              <TextField
+                id="outlined-multiline-static"
+                label="Details"
+                multiline
+                rows={4}
+                defaultValue="Please add your initiative details here."
+                value={itemDescription}
+                onChange={(event) => {
+                  setItemDescription(event.target.value);
+                }}
               />
-              <Button variant="contained" onClick={handleAddInit}>Add</Button>
+              <Button variant="contained" onClick={handleAddInit}>
+                Add
+              </Button>
             </Stack>
           </Typography>
         </Box>
       </Modal>
 
-      <Table size="small">
+      <Table size="medium">
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Description</TableCell>
-
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.id}>
+            <TableRow key={row.id} hover="true">
               <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
+              <TableCell>
+                <Link underline='none' color={'black'} href={`/${row.id}`}>{row.name}</Link>
+              </TableCell>
               <TableCell>{row.description}</TableCell>
             </TableRow>
           ))}
