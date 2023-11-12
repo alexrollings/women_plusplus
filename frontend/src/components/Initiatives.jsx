@@ -1,21 +1,21 @@
 import * as React from 'react';
+import Box from "@mui/material/Box";
+import Fade from '@mui/material/Fade';
 import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
+import Stack from "@mui/material/Stack";
+import Title from "./Title";
+import Modal from "@mui/material/Modal";
+import Button from "@mui/material/Button";
+import Tooltip from '@mui/material/Tooltip';
+import AddIcon from "@mui/icons-material/Add";
+import TableRow from '@mui/material/TableRow';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import AddIcon from "@mui/icons-material/Add";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import { useState } from "react";
 import TextField from "@mui/material/TextField";
-import Title from "./Title";
-import Fade from '@mui/material/Fade';
-import Tooltip from '@mui/material/Tooltip';
+import { useState } from "react";
 
 // Generate Order Data
 function createData(id, date, name, description, score) {
@@ -177,7 +177,7 @@ export default function Initiatives() {
             <TableCell>Date</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Description</TableCell>
-            <TableCell>Heart Rate</TableCell>
+            <TableCell>Heartbeat</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

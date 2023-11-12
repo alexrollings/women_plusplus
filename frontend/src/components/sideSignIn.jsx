@@ -1,23 +1,31 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
+import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import CssBaseline from '@mui/material/CssBaseline';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
-const defaultTheme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#7E52A0",
+    },
+    secondary: {
+      main: "#58A4B0",
+    },
+  },
+});
+
 
 export default function ideSignIn() {
     const handleSubmit = (event) => {
@@ -26,7 +34,7 @@ export default function ideSignIn() {
     };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
@@ -86,9 +94,20 @@ export default function ideSignIn() {
                 fullWidth
                 variant="contained"
                 href='/dashboard'
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: -1 }}
               >
                 Sign In
+              </Button>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                href='#'
+                sx={{ mt: 3, mb: 2,
+                  backgroundColor: (theme) => theme.palette.secondary.main,
+                }}
+              >
+                Sign Up
               </Button>
               <Grid container>
                 <Grid item xs>
@@ -97,9 +116,7 @@ export default function ideSignIn() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
+
                 </Grid>
               </Grid>
             </Box>

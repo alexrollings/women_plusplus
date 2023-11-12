@@ -20,26 +20,12 @@ import Initiatives from "./Initiatives";
 import Title from "./Title";
 import { Stack } from "@mui/material";
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="/">
-        ImpactPulse
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
+
+//sets width for nav drawer
 const drawerWidth = 240;
 
+//styles the nav bar
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
@@ -58,6 +44,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
+//styles the nav drawer
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
@@ -84,7 +71,7 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-// TODO remove, this demo shouldn't need to reset the theme.
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -93,8 +80,23 @@ const theme = createTheme({
     secondary: {
       main: "#58A4B0",
     },
+    dark: {
+        primary: {
+          main: '#64B5F6', // Darker shade of your primary color
+        },
+        secondary: {
+          main: '#FFD54F', // Darker shade of your secondary color
+        },
+        background: {
+          default: '#121212', // Dark background color
+          paper: '#1E1E1E', // Slightly lighter background color for paper-like surfaces
+        },
+        text: {
+          primary: '#FFFFFF', // Light text color
+          secondary: '#B0BEC5', // A bit lighter secondary text color
+        },
   },
-});
+}});
 
 export default function Navigation() {
   const [open, setOpen] = React.useState(false);
@@ -174,7 +176,7 @@ export default function Navigation() {
             2022 to date
             <Stack spacing={2} direction="row-reverse" alignItems='center' paddingRight={6}>
               <img src="/icons/heartbeat.png" />
-              Heart Rate
+              Heartbeat
             </Stack>
             <Grid container spacing={3} sx={{ mt: -2, mb: 2 }}>
               <Grid item xs={12} md={4} lg={3}>
@@ -269,7 +271,7 @@ export default function Navigation() {
                     spacing={2}
                   >
                     <Typography variant="h1" component="div" color='white'>
-                      6.7
+                      6.7<Typography variant="h7" color='white' sx={{fontSize: '1rem'}}> / 10</Typography>
                     </Typography>
                     <Typography variant="h7" component="div" color='white'>
                       Average Score
@@ -284,7 +286,6 @@ export default function Navigation() {
                 </Paper>
               </Grid>
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>

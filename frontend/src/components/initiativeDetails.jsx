@@ -1,43 +1,30 @@
 import * as React from "react";
-import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import MuiDrawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Link from "@mui/material/Link";
-import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { mainListItems, secondaryListItems } from "./listItems";
-import Initiatives from "./Initiatives";
 import Title from "./Title";
+import Toolbar from "@mui/material/Toolbar";
+import Divider from "@mui/material/Divider";
+import MenuIcon from "@mui/icons-material/Menu";
+import MuiDrawer from "@mui/material/Drawer";
+import MuiAppBar from "@mui/material/AppBar";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import CssBaseline from "@mui/material/CssBaseline";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { Stack } from "@mui/material";
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="/">
-        ImpactPulse
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import { mainListItems, secondaryListItems } from "./listItems";
+import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -176,140 +163,138 @@ export default function InitiativeDetails() {
             <Grid item xs={12}>
               <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
                 <Grid item xs={12} md={4} lg={3}>
-                  <Stack
-                  direction='row'
-                  spacing={7}
-                  justifyContent='center'
-                  >
-
-
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      flexDirection: "column",
-                      height: 150,
-                      width: 200,
-                    //   color: (theme) => theme.palette.primary.main,
-                      marginBottom: 2,
-                      backgroundColor: (theme) => theme.palette.secondary.main,
-                    }}
-                  >
-                    <Stack
-                      direction="column"
-                      justifyContent="flex-start"
-                      alignItems="center"
-                      spacing={2}
+                  <Stack direction="row" spacing={7} justifyContent="center">
+                    <Paper
+                      sx={{
+                        p: 2,
+                        display: "flex",
+                        flexDirection: "column",
+                        height: 150,
+                        width: 200,
+                        //   color: (theme) => theme.palette.primary.main,
+                        marginBottom: 2,
+                        backgroundColor: (theme) =>
+                          theme.palette.secondary.main,
+                      }}
                     >
-                      <Typography variant="h2" component="div" color='white'>
-                        6.7
-                      </Typography>
-                      <Typography variant="h7" component="div" color='white'>
-                        Average Score
-                      </Typography>
-                    </Stack>
-                  </Paper>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      flexDirection: "column",
-                      height: 150,
-                      width: 200,
-                    //   color: (theme) => theme.palette.primary.main,
-                      marginBottom: 2,
-                    }}
-                  >
-                    <Stack
-                      direction="column"
-                      justifyContent="flex-start"
-                      alignItems="center"
-                      spacing={2}
+                      <Stack
+                        direction="column"
+                        justifyContent="flex-start"
+                        alignItems="center"
+                        spacing={2}
+                      >
+                        <Typography variant="h2" component="div" color="white">
+                          6.7
+                          <Typography
+                            variant="h7"
+                            color="white"
+                            sx={{ fontSize: "1rem" }}
+                          >
+                            {" "}
+                            / 10
+                          </Typography>
+                        </Typography>
+                        <Typography variant="h7" component="div" color="white">
+                          Average Score
+                        </Typography>
+                      </Stack>
+                    </Paper>
+                    <Paper
+                      sx={{
+                        p: 2,
+                        display: "flex",
+                        flexDirection: "column",
+                        height: 150,
+                        width: 200,
+                        //   color: (theme) => theme.palette.primary.main,
+                        marginBottom: 2,
+                      }}
                     >
-                      <Typography variant="h2" component="div">
-                        5.2k
-                      </Typography>
-                      <Typography variant="h7" component="div">
-                        Money Spent
-                      </Typography>
-                    </Stack>
-                  </Paper>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      flexDirection: "column",
-                      height: 150,
-                      width: 200,
-                      marginBottom: 2,
-
-                    }}
-                  >
-                    <Stack
-                      direction="column"
-                      justifyContent="flex-start"
-                      alignItems="center"
-                      spacing={2}
+                      <Stack
+                        direction="column"
+                        justifyContent="flex-start"
+                        alignItems="center"
+                        spacing={2}
+                      >
+                        <Typography variant="h2" component="div">
+                          5.2k
+                        </Typography>
+                        <Typography variant="h7" component="div">
+                          Money Spent
+                        </Typography>
+                      </Stack>
+                    </Paper>
+                    <Paper
+                      sx={{
+                        p: 2,
+                        display: "flex",
+                        flexDirection: "column",
+                        height: 150,
+                        width: 200,
+                        marginBottom: 2,
+                      }}
                     >
-                      <Typography variant="h2" component="div">
-                        125
-                      </Typography>
-                      <Typography variant="h7" component="div">
-                        Hours Spent
-                      </Typography>
-                    </Stack>
-                  </Paper>
+                      <Stack
+                        direction="column"
+                        justifyContent="flex-start"
+                        alignItems="center"
+                        spacing={2}
+                      >
+                        <Typography variant="h2" component="div">
+                          125
+                        </Typography>
+                        <Typography variant="h7" component="div">
+                          Hours Spent
+                        </Typography>
+                      </Stack>
+                    </Paper>
                   </Stack>
-                    <TableContainer component={Paper}style={{ width: '100%' }}>
-
-                      <Table>
-                        <TableHead>
-                          <TableRow>
-                            <TableCell>Details</TableCell>
-                            <TableCell>Count</TableCell>
-                            <TableCell align="center">Heart Rate</TableCell>
-                          </TableRow>
-                        </TableHead>
-                        <TableBody>
-                          <TableRow>
-                            <TableCell>Applicants</TableCell>
-                            <TableCell>1000</TableCell>
-                            <TableCell align="center">1.2</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Participants</TableCell>
-                            <TableCell>125</TableCell>
-                            <TableCell align="center">2.1</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Teams</TableCell>
-                            <TableCell>10</TableCell>
-                            <TableCell align="center">1.0</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Judges</TableCell>
-                            <TableCell>5</TableCell>
-                            <TableCell align="center">.08</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Mentors</TableCell>
-                            <TableCell>12</TableCell>
-                            <TableCell align="center">.08</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>Nationalities</TableCell>
-                            <TableCell>45</TableCell>
-                            <TableCell align="center">.08</TableCell>
-                          </TableRow>
-                        </TableBody>
-                      </Table>
-                    </TableContainer>
-
+                  <TableContainer component={Paper} style={{ width: "100%" }}>
+                    <Table>
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Details</TableCell>
+                          <TableCell>Count</TableCell>
+                          <TableCell align="center">Heartbeat</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        <TableRow>
+                          <TableCell>Applicants</TableCell>
+                          <TableCell>1000</TableCell>
+                          <TableCell align="center">1.2</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Participants</TableCell>
+                          <TableCell>125</TableCell>
+                          <TableCell align="center">2.1</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Teams</TableCell>
+                          <TableCell>10</TableCell>
+                          <TableCell align="center">1.0</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Judges</TableCell>
+                          <TableCell>5</TableCell>
+                          <TableCell align="center">.08</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Mentors</TableCell>
+                          <TableCell>12</TableCell>
+                          <TableCell align="center">.08</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell>Nationalities</TableCell>
+                          <TableCell>45</TableCell>
+                          <TableCell align="center">.08</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </Grid>
               </Paper>
             </Grid>
-
-            <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>
