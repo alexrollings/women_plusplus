@@ -6,6 +6,10 @@ Prototype link:  https://www.figma.com/file/t1fVqozFmvs1RQOwPW0JGX/ImpactPulse?t
 
 To play prototype: https://www.figma.com/proto/t1fVqozFmvs1RQOwPW0JGX/ImpactPulse?type=design&node-id=[…]ling=min-zoom&page-id=74%3A465&starting-point-node-id=74%3A466
 
+## Pitch URL
+
+https://docs.google.com/presentation/d/1Dmy3zCvfcVC024HFTLBAfH_hi0lgXUJZLAIr1dLLfFU/edit?usp=sharing
+
 ===
 ### Frontend Built With
 Vite.js, React,js, MaterialUI
