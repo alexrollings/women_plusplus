@@ -7,14 +7,14 @@ def calculateImpactScore(applicants: int, spaces: int, participants: int, \
                         survey_score: float) -> float:
     
     # "Ideal" scores --> these will normalise the individual components of the impact score 
-    applicants_per_space = 3
+    applicants_per_space = 5
     participants_per_space = 0.95
     participants_per_mentor = 10
     perc_women = 0.8
     spaces_div_sponsors = 20
     spaces_div_community_partners = 10
     ideal_survey_score = 5
-    cost_per_participant = 200
+    cost_per_participant = 50
 
     n_KPIs = 8
 
@@ -104,7 +104,7 @@ mentors_w = 1
 sponsors_w = 1
 community_partners_w = 2
 cost_w = 5000 # (funding expenditure - income, e.g. from tickets)
-resource_hours_w = 50 
+resource_hours_w = 100 
 
 # Often workers are volunteers, but we multiple by the average hourly rate in Switzerland to get a sense of the value of the work
 average_hourly_rate = int(round(10400 / (40 * (52/12)))) # average monthly salary / (working hours per week * average weeks per month)  
