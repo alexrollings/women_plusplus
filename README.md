@@ -37,6 +37,28 @@ Our frontend includes the following key features:
 
 -Modular Components: The codebase is organized using a modular component structure, making it easy to understand, extend, and maintain.
 
+## Backend Description
+
+# Data:
+* EventBrite: randomly generated. We were not able to connect to the EventBrite API, as our Frontend is not hosted on a URL, but we generated data with the same fields as EventBrite, and the idea would be to pull this data directly from the website.
+* Input from NPO: hardcoded.
+* Input from post event surveys: randomly generated.
+
+# Analysis:
+
+* We define factors/KPIs that quantify the impact of an event, according to the organisation's goal
+* In the case of Women++ these were:
+..* Percentage of women attending event
+..* Ratio of applicants to spaces (how “popular” your event was)
+..* Attendance rate
+..* Number of mentors per person
+..* Number of community partners, sponsors involved in the event, scaled to the size of the event
+..* Cost of the event per participant (cost includes financial and resource cost)
+..* Impact score taken from our post-event survey
+*We provide impact targets for each of these factors/KPIs (which are customisable, if the NPO wants to set targets themself)
+* The algorithm then gives you single measurement that combines all of these factors/KPIs, by normalising all inputs using the "target" values, then taking an average, and multiplying by 10
+* If you hit all the targets, you get an impact score of 10 (get a score lower/higher than 10 if you don’t achieve the targets or exceed them, respectively)
+
 ## Plan for later stages
 
 -Confiugre API to fetch data from backend/Eventbright API.
