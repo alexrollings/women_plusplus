@@ -28,7 +28,7 @@ const rows = [
     "10 Oct, 2023",
     "Hackathon",
     "A competive event where teams of programmers and designers collaborate...",
-    6.7
+    8.1
   ),
   createData(
     4,

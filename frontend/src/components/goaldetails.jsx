@@ -16,11 +16,14 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems, secondaryListItems } from "./listItems";
+import Initiatives from "./Initiatives";
 import Title from "./Title";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 import { Stack } from "@mui/material";
-import { Button } from "@mui/material";
-
-
 
 function Copyright(props) {
   return (
@@ -88,18 +91,79 @@ const Drawer = styled(MuiDrawer, {
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#7E52A0",
-      },
-      secondary: {
-        main: "#58A4B0",
-      },
+  palette: {
+    primary: {
+      main: "#7E52A0",
     },
-  });
+    secondary: {
+      main: "#58A4B0",
+    },
+  },
+});
+function createData(id, date, name, description, score) {
+    return { id, date, name, description, score };
+  }
 
-export default function Goals() {
-  const [open, setOpen] = React.useState(false);
+const rows = [
+    createData(
+      5,
+      "10 Oct, 2023",
+      "Hackathon",
+      "A competive event where teams of programmers and designers collaborate...",
+      8.1
+    ),
+    createData(
+      2,
+      "10 Dec, 2022",
+      "Javascript Class",
+      "A class to teach the basics of Javascript.",
+      7.1
+    ),
+    createData(
+      4,
+      "10 Sep, 2023",
+      "Beginner Python Class",
+      "A class to teach the basics of Python.",
+      6.7
+    ),
+    createData(
+      0,
+      "16 Mar, 2022",
+      "Hackathon",
+      "A competive event where teams of programmers and designers collaborate...",
+      5.5
+    ),
+    createData(
+      3,
+      "11 Mar, 2023",
+      "Hackathon",
+      "A competive event where teams of programmers and designers collaborate...",
+      5.2
+    ),
+    createData(
+      1,
+      "4 Aug, 2022",
+      "Demo Days",
+      "A showcase of the projects that were created.",
+      3.2
+    ),
+  ];
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    borderRadius: '5px',
+    p: 4,
+  };
+
+export default function GoalDetails() {
+  const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -133,7 +197,7 @@ export default function Goals() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Goal Details
             </Typography>
             ImpactPulse
           </Toolbar>
@@ -172,60 +236,35 @@ export default function Goals() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Title>Goals</Title>
-            <Grid container spacing={55}>
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                    width: 360,
-                  }}
-                >
-                  <Stack direction="column" spacing={4}>
-                      <Typography
-                        variant="h5"
-                        component="div"
-                        color="secondary"
-                      >
-                        Include Women in Tech
-                      </Typography>
-                    <Typography variant="h8" component="div">
-                      Impact Score
-                    </Typography>
-                    <img src="/icons/chart.png" />
-                  </Stack>
-                  <Link underline="none" color={"primary"} href='/goals/1'>
-                    <Button>
-                      More details
-                      </Button>
-                  </Link>
+            <Title>Include Women In Tech</Title>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+                <Table size="medium">
+        <TableHead>
+          <TableRow>
+            <TableCell>Date</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Description</TableCell>
+            <TableCell>Heart Rate</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.id} hover="true">
+              <TableCell>{row.date}</TableCell>
+              <TableCell>
+                <Link underline="none" color={"black"} href={`/initiatives/${row.id}`}>
+                  {row.name}
+                </Link>
+              </TableCell>
+              <TableCell>{row.description}</TableCell>
+              <TableCell>{row.score}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
                 </Paper>
               </Grid>
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                    width: 340,
-                  }}
-                >
-                  <Stack direction="column" spacing={4}>
-                    <Typography variant="h5" component="div" color="secondary">
-                      Include Women in Tech
-                    </Typography>
-                    <Typography variant="h8" component="div">
-                      Impact Score
-                    </Typography>
-                    <img src="/icons/chart.png" />
-                  </Stack>
-                </Paper>
-              </Grid>
-            </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>

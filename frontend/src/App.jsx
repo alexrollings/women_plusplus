@@ -6,6 +6,7 @@ import SideSignIn from './components/sideSignIn';
 import InitiativeDetails from './components/initiativeDetails';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Goals from './components/goalsPage';
+import GoalDetails from './components/goaldetails';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/initiatives' element={<InitiativesPage />} />
         <Route path='/goals' element={<Goals />} />
         <Route path='/initiatives/5' element={<InitiativeDetails />} />
+        <Route path ='/goals/1' element={<GoalDetails />} />
       </Routes>
     </Router>
   );

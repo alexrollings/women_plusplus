@@ -174,8 +174,14 @@ export default function InitiativeDetails() {
             <Title>Hackathon</Title>
 
             <Grid item xs={12}>
-              <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
+              <Paper sx={{ p: 2, display: "flex", flexDirection: "row" }}>
                 <Grid item xs={12} md={4} lg={3}>
+                  <Stack
+                  direction='row'
+                  spacing={7}
+                  >
+
+
                   <Paper
                     sx={{
                       p: 2,
@@ -202,9 +208,59 @@ export default function InitiativeDetails() {
                       </Typography>
                     </Stack>
                   </Paper>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: "flex",
+                      flexDirection: "column",
+                      height: 150,
+                      width: 200,
+                    //   color: (theme) => theme.palette.primary.main,
+                      marginBottom: 2,
+                    }}
+                  >
+                    <Stack
+                      direction="column"
+                      justifyContent="flex-start"
+                      alignItems="center"
+                      spacing={2}
+                    >
+                      <Typography variant="h2" component="div">
+                        5.2k
+                      </Typography>
+                      <Typography variant="h7" component="div">
+                        Money Spent
+                      </Typography>
+                    </Stack>
+                  </Paper>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: "flex",
+                      flexDirection: "column",
+                      height: 150,
+                      width: 200,
+                      marginBottom: 2,
 
+                    }}
+                  >
+                    <Stack
+                      direction="column"
+                      justifyContent="flex-start"
+                      alignItems="center"
+                      spacing={2}
+                    >
+                      <Typography variant="h2" component="div">
+                        125
+                      </Typography>
+                      <Typography variant="h7" component="div">
+                        Hours Spent
+                      </Typography>
+                    </Stack>
+                  </Paper>
+                  </Stack>
                     <TableContainer component={Paper}style={{ width: '100%' }}>
-                       
+
                       <Table>
                         <TableHead>
                           <TableRow>
