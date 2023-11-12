@@ -81,7 +81,6 @@ if __name__ == "__main__":
     totals_df = pd.DataFrame({"Total": total_df["62-63"] + total_df["71"] + total_df["72"] + total_df["73-75"], 
                               "Female": female_df["62-63"] + female_df["71"] + female_df["72"] + female_df["73-75"], 
                               "Male": male_df["62-63"] + male_df["71"] + male_df["72"] + male_df["73-75"]})
-    pprint(totals_df.head())
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=totals_df.index, y=totals_df.Total, mode=None, fill='tozeroy', line=dict(color='rgb(126, 82, 160)'), name="Total")) # Purple color with 0.5 translucency
@@ -89,10 +88,24 @@ if __name__ == "__main__":
     fig.update_layout(
         title_text='Employees in Technical Roles in Switzerland (1991-2023)',
         title_font=dict(size=32), # Change the font size of the title
-        legend=dict(x=0.02, y=1, font=dict(size=24)) # Move the legend to the top left corner and change its size
+        legend=dict(x=0.02, y=1, font=dict(size=24)), # Move the legend to the top left corner and change its size
+        annotations=[
+        dict(
+            x=1,
+            y=-0.12,
+            showarrow=False,
+            text="Data source: <a href='https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.27165007.html'>https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.27165007.html</a>",
+            xref="paper",
+            yref="paper",
+            font=dict(size=14)
+        )
+    ]
     )
     fig.update_xaxes(tickfont=dict(size=22)) # Change the font size of the x axis labels
     fig.update_yaxes(tickfont=dict(size=22)) # Change the font size of the y axis labels
     fig.show()
     pio.write_image(fig, 'images/tech_employees.png')
 
+    # Stats for presentation
+    perc_women_in_tech = int(round(totals_df["Female"][-1]/totals_df["Total"][-1] * 100))
+    print(f"As of June 2023 there are {perc_women_in_tech}% of tech jobs are filled by women, with {int(round(totals_df.Total[-1]))} total tech jobs in Switzerland.")
