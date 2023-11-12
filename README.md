@@ -37,5 +37,19 @@ Our frontend includes the following key features:
 
 -Modular Components: The codebase is organized using a modular component structure, making it easy to understand, extend, and maintain.
 
+## Plan for later stages
+
+-Confiugre API to fetch data from backend/Eventbright API.
+
+-Restructure frontend to include state and state management and to include data mapping and data visualization.
+
+-Include more data points from attendee surverys to better conclude impact of the event.
 
 
+## Contributors
+
+Alex
+Angina Herrmann
+John Wofford - Frontend Developer - [LinkedIn] (https://www.linkedin.com/in/jonathanbwofford/)
+Karina
+Rachel C
