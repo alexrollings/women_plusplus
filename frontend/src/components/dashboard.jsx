@@ -172,17 +172,18 @@ export default function Navigation() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Title>Key Statistics</Title>
             2022 to date
-            <Stack spacing={2} direction="row-reverse">
-              <img src="/icons/faviconIP.png" />
+            <Stack spacing={2} direction="row-reverse" alignItems='center' paddingRight={6}>
+              <img src="/icons/heartbeat.png" />
               Heart Rate
             </Stack>
-            <Grid container spacing={3} sx={{ mt: 0, mb: 2 }}>
+            <Grid container spacing={3} sx={{ mt: -2, mb: 2 }}>
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
+                    justifyContent: "center",
                     height: 200,
                   }}
                 >
@@ -192,7 +193,7 @@ export default function Navigation() {
                     alignItems="center"
                     spacing={2}
                   >
-                    <Typography variant="h1" component="div">
+                    <Typography variant="h2" component="div" color='primary'>
                       12
                     </Typography>
                     <Typography variant="h7" component="div">
@@ -207,6 +208,7 @@ export default function Navigation() {
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
+                    justifyContent: "center",
                     height: 200,
                   }}
                 >
@@ -216,7 +218,7 @@ export default function Navigation() {
                     alignItems="center"
                     spacing={2}
                   >
-                    <Typography variant="h1" component="div">
+                    <Typography variant="h2" component="div" color='primary'>
                       200
                     </Typography>
                     <Typography variant="h7" component="div">
@@ -231,6 +233,7 @@ export default function Navigation() {
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
+                    justifyContent: "center",
                     height: 200,
                   }}
                 >
@@ -240,7 +243,7 @@ export default function Navigation() {
                     alignItems="center"
                     spacing={2}
                   >
-                    <Typography variant="h1" component="div">
+                    <Typography variant="h2" component="div" color='primary'>
                       12k
                     </Typography>
                     <Typography variant="h7" component="div">
@@ -249,14 +252,14 @@ export default function Navigation() {
                   </Stack>
                 </Paper>
               </Grid>
-              <Grid item xs={12} md={4} lg={3} sx={{backgroundColor: theme.secondary}}>
+              <Grid item xs={12} md={4} lg={3} >
                 <Paper
                   sx={{
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
                     height: 200,
-
+                    backgroundColor: (theme) => theme.palette.secondary.main,
                   }}
                 >
                   <Stack
@@ -265,10 +268,10 @@ export default function Navigation() {
                     alignItems="center"
                     spacing={2}
                   >
-                    <Typography variant="h1" component="div">
+                    <Typography variant="h1" component="div" color='white'>
                       6.7
                     </Typography>
-                    <Typography variant="h7" component="div">
+                    <Typography variant="h7" component="div" color='white'>
                       Average Score
                     </Typography>
                   </Stack>

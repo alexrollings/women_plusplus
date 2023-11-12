@@ -14,48 +14,61 @@ import Stack from "@mui/material/Stack";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Title from "./Title";
+import Fade from '@mui/material/Fade';
+import Tooltip from '@mui/material/Tooltip';
 
 // Generate Order Data
-function createData(id, date, name, description) {
-  return { id, date, name, description};
+function createData(id, date, name, description, score) {
+  return { id, date, name, description, score };
 }
 
 const rows = [
   createData(
-    0,
-    "16 Mar, 2019",
-    "Elvis Presley",
-    "description"
-  ),
-  createData(
-    1,
-    "16 Mar, 2019",
-    "Paul McCartney",
-    "description"
-  ),
-  createData(
-    2,
-    "16 Mar, 2019",
-    "Tom Scholz",
-    "description"
-  ),
-  createData(
-    3,
-    "16 Mar, 2019",
-    "Michael Jackson",
-    "description"
+    5,
+    "10 Oct, 2023",
+    "Hackathon",
+    "A competive event where teams of programmers and designers collaborate...",
+    6.7
   ),
   createData(
     4,
-    "15 Mar, 2019",
-    "Bruce Springsteen",
-    "description"
+    "10 Sep, 2023",
+    "Beginner Python Class",
+    "A class to teach the basics of Python.",
+    6.7
+  ),
+  createData(
+    3,
+    "11 Mar, 2023",
+    "Hackathon",
+    "A competive event where teams of programmers and designers collaborate...",
+    5.2
+  ),
+  createData(
+    2,
+    "10 Dec, 2022",
+    "Javascript Class",
+    "A class to teach the basics of Javascript.",
+    7.1
+  ),
+  createData(
+    1,
+    "4 Aug, 2022",
+    "Demo Days",
+    "A showcase of the projects that were created.",
+    3.2
+  ),
+  createData(
+    0,
+    "16 Mar, 2022",
+    "Hackathon",
+    "A competive event where teams of programmers and designers collaborate...",
+    5.5
   ),
 ];
-
-function preventDefault(event) {
-  event.preventDefault();
-}
+      function preventDefault(event) {
+        event.preventDefault();
+      };
 
 const style = {
   position: "absolute",
@@ -94,9 +107,19 @@ export default function Initiatives() {
     <React.Fragment>
       <Stack direction="row" justifyContent="space-between">
         <Title>Recent Initiatives</Title>
-        <Button onClick={handleOpen}>
-          <AddIcon fontSize="large" />
+        <Tooltip
+          TransitionComponent={Fade}
+          TransitionProps={{ timeout: 600 }}
+          title="Add"
+        >
+
+        <Button onClick={handleOpen} sx={{
+          color: 'white',
+          backgroundColor: (theme) => theme.palette.primary.main
+          }}>
+          Add a new initiative<AddIcon fontSize="medium" />
         </Button>
+        </Tooltip>
       </Stack>
       <Modal
         open={open}
@@ -144,6 +167,7 @@ export default function Initiatives() {
             <TableCell>Date</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Description</TableCell>
+            <TableCell>Heart Rate</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -151,9 +175,12 @@ export default function Initiatives() {
             <TableRow key={row.id} hover="true">
               <TableCell>{row.date}</TableCell>
               <TableCell>
-                <Link underline='none' color={'black'} href={`/${row.id}`}>{row.name}</Link>
+                <Link underline="none" color={"black"} href={`/initiatives/${row.id}`}>
+                  {row.name}
+                </Link>
               </TableCell>
               <TableCell>{row.description}</TableCell>
+              <TableCell>{row.score}</TableCell>
             </TableRow>
           ))}
         </TableBody>

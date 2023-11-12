@@ -17,6 +17,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems, secondaryListItems } from "./listItems";
 import Title from "./Title";
+import { Stack } from "@mui/material";
+
 
 function Copyright(props) {
   return (
@@ -95,7 +97,7 @@ const theme = createTheme({
   });
 
 export default function Goals() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -170,7 +172,6 @@ export default function Goals() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Title>Goals</Title>
             <Grid container spacing={55}>
-
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
@@ -178,10 +179,21 @@ export default function Goals() {
                     display: "flex",
                     flexDirection: "column",
                     height: 240,
-                    width: 340,
+                    width: 360,
                   }}
                 >
-
+                  <Stack
+                    direction="column"
+                    spacing={4}
+                  >
+                    <Typography variant="h5" component="div" color="secondary">
+                      Include Women in Tech
+                    </Typography>
+                    <Typography variant="h8" component="div" >
+                      Impact Score
+                    </Typography>
+                    <img src="/icons/chart.png" />
+                  </Stack>
                 </Paper>
               </Grid>
               <Grid item xs={12} md={4} lg={3}>
@@ -194,6 +206,18 @@ export default function Goals() {
                     width: 340,
                   }}
                 >
+                  <Stack
+                    direction="column"
+                    spacing={4}
+                  >
+                    <Typography variant="h5" component="div" color="secondary">
+                      Include Women in Tech
+                    </Typography>
+                    <Typography variant="h8" component="div" >
+                      Impact Score
+                    </Typography>
+                    <img src="/icons/chart.png" />
+                  </Stack>
                 </Paper>
               </Grid>
             </Grid>
