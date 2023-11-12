@@ -104,7 +104,7 @@ if __name__ == "__main__":
     fig.update_xaxes(tickfont=dict(size=22)) # Change the font size of the x axis labels
     fig.update_yaxes(tickfont=dict(size=22)) # Change the font size of the y axis labels
     fig.show()
-    pio.write_image(fig, 'images/tech_employees.png')
+    # pio.write_image(fig, 'images/tech_employees.png')
 
     # Stats for presentation
     perc_women_in_tech = int(round(totals_df["Female"][-1]/totals_df["Total"][-1] * 100))
