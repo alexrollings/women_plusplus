@@ -70,7 +70,7 @@ Our frontend includes the following key features:
 
 ## Contributors
 
-Alexandra Rollings - Data Scientist
+Alexandra Rollings - Data Scientist - [LinkedIn] (https://www.linkedin.com/in/alex-rollings/)
 
 Angina Herrmann - Product Manager
 
