@@ -76,6 +76,6 @@ Angina Herrmann - Product Manager
 
 John Wofford - Full stack Developer - [LinkedIn] (https://www.linkedin.com/in/jonathanbwofford/)
 
-Karina Rojas - Data Scientist
+Karina Rojas - Data Scientist - [LinkedIn] (https://www.linkedin.com/in/karina-rojas-olate/)
 
 Rachel Camp - UX/UI Designer
