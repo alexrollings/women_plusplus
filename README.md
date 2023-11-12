@@ -48,12 +48,12 @@ Our frontend includes the following key features:
 
 ## Contributors
 
-Alex
+Alexandra Rollings - Data Scientist
 
-Angina Herrmann
+Angina Herrmann - Product Manager
 
-John Wofford - Frontend Developer - [LinkedIn] (https://www.linkedin.com/in/jonathanbwofford/)
+John Wofford - Full stack Developer - [LinkedIn] (https://www.linkedin.com/in/jonathanbwofford/)
 
-Karina
+Karina Rojas - Data Scientist
 
-Rachel C
+Rachel Camp - UX/UI Designer
