@@ -39,12 +39,12 @@ Our frontend includes the following key features:
 
 ## Backend Description
 
-# Data:
+### Data:
 * EventBrite: randomly generated. We were not able to connect to the EventBrite API, as our Frontend is not hosted on a URL, but we generated data with the same fields as EventBrite, and the idea would be to pull this data directly from the website.
 * Input from NPO: hardcoded.
 * Input from post event surveys: randomly generated.
 
-# Analysis:
+### Analysis:
 
 * We define factors/KPIs that quantify the impact of an event, according to the organisation's goal
 * In the case of Women++ these were:
