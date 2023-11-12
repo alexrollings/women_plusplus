@@ -49,7 +49,11 @@ Our frontend includes the following key features:
 ## Contributors
 
 Alex
+
 Angina Herrmann
+
 John Wofford - Frontend Developer - [LinkedIn] (https://www.linkedin.com/in/jonathanbwofford/)
+
 Karina
+
 Rachel C
