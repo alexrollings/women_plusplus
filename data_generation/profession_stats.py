@@ -2,7 +2,10 @@ import pandas as pd
 import numpy as np
 from pprint import pprint
 import streamlit as st
-import plotly.express as px # Interactive plots/visualisations
+import plotly.express as px 
+import plotly.graph_objects as go
+import plotly.io as pio
+
 
 def extractFormatDataFromExcel(filename: str, sheet_name: str)-> pd.DataFrame:
     # Read in data from excel file
@@ -75,38 +78,21 @@ if __name__ == "__main__":
     # Dataframe with total number of people in tech and split by gender
     # Tech career indices: 62-63, 71, 72
     # Unfortunately 74 is combined with 73 & 75, so ignore this
-    totals_df = pd.DataFrame({"Total": total_df["62-63"] + total_df["71"] + total_df["72"], 
-                              "Female": female_df["62-63"] + female_df["71"] + female_df["72"], 
-                              "Male": male_df["62-63"] + male_df["71"] + male_df["72"]})
+    totals_df = pd.DataFrame({"Total": total_df["62-63"] + total_df["71"] + total_df["72"] + total_df["73-75"], 
+                              "Female": female_df["62-63"] + female_df["71"] + female_df["72"] + female_df["73-75"], 
+                              "Male": male_df["62-63"] + male_df["71"] + male_df["72"] + male_df["73-75"]})
     pprint(totals_df.head())
 
-    # Streamlit app
-    st.title("Women++ Challenge App Demo")
-    st.header("Tech Employee Statistics in Switzerland")
-
-    # Create sidebar with check box to see df or not
-    # Checkbox will be created in main body of page if do not use st.sidebar.xx
-    if st.sidebar.checkbox("Show Data"):
-        st.subheader("Dataset")
-        st.dataframe(data = totals_df) # Display dataframe
-
-    # Create containers laid out as side by side columns
-    # Pass either an int (# of cols) or an iter of numbers that specifies the relative widths
-    left_col, mid_col, right_col = st.columns([3, 1, 1])
-
-    # Widget: selectbox for gender
-    # Widget: small standalone component that provides a specific functionality
-    genders = totals_df.columns 
-    gender = st.sidebar.selectbox("Choose a gender breakdown", options=genders)
-    if gender == "Total":
-        reduced_df = totals_df["Total"]
-    elif gender == "Female":
-        reduced_df = totals_df["Female"]
-    else:
-        reduced_df = totals_df["Male"]
-
-    fig = px.line(reduced_df, x=reduced_df.index, y=gender, title='Number of employees in Tech over time')
-    st.plotly_chart(fig)
-
-    # fig.show()
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=totals_df.index, y=totals_df.Total, mode=None, fill='tozeroy', line=dict(color='rgb(126, 82, 160)'), name="Total")) # Purple color with 0.5 translucency
+    fig.add_trace(go.Scatter(x=totals_df.index, y=totals_df.Female, mode='lines', fill='tozeroy', line=dict(color='rgb(17, 29, 74)', width=4), name="Women")) # Green-blue color and thicker line
+    fig.update_layout(
+        title_text='Employees in Technical Roles in Switzerland (1991-2023)',
+        title_font=dict(size=32), # Change the font size of the title
+        legend=dict(x=0.02, y=1, font=dict(size=22)) # Move the legend to the top left corner and change its size
+    )
+    fig.update_xaxes(tickfont=dict(size=22)) # Change the font size of the x axis labels
+    fig.update_yaxes(tickfont=dict(size=22)) # Change the font size of the y axis labels
+    fig.show()
+    pio.write_image(fig, 'images/tech_employees.png')
 
