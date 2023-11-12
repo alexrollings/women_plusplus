@@ -92,6 +92,7 @@ export default function Initiatives() {
 
   const [name, setName] = useState("");
   const [itemDescription, setItemDescription] = useState("")
+  const [eventURL, setEventURL] = useState("")
 
   const handleAddInit = () => {
     rows.push(createData(
@@ -151,6 +152,15 @@ export default function Initiatives() {
                 value={itemDescription}
                 onChange={(event) => {
                   setItemDescription(event.target.value);
+                }}
+                />
+                <TextField
+                id="standard-basic"
+                label="Event URL"
+                variant="standard"
+                value={eventURL}
+                onChange={(event) => {
+                  setName(event.target.value);
                 }}
               />
               <Button variant="contained" onClick={handleAddInit}>

@@ -163,7 +163,7 @@ const rows = [
   };
 
 export default function GoalDetails() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -241,6 +241,9 @@ export default function GoalDetails() {
                 <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
                 <Table size="medium">
         <TableHead>
+            <Title>
+              Initiatives by Rank
+              </Title>
           <TableRow>
             <TableCell>Date</TableCell>
             <TableCell>Name</TableCell>

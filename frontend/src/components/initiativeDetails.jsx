@@ -174,11 +174,12 @@ export default function InitiativeDetails() {
             <Title>Hackathon</Title>
 
             <Grid item xs={12}>
-              <Paper sx={{ p: 2, display: "flex", flexDirection: "row" }}>
+              <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
                 <Grid item xs={12} md={4} lg={3}>
                   <Stack
                   direction='row'
                   spacing={7}
+                  justifyContent='center'
                   >
 
 
