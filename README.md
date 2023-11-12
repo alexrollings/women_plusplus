@@ -48,14 +48,14 @@ Our frontend includes the following key features:
 
 * We define factors/KPIs that quantify the impact of an event, according to the organisation's goal
 * In the case of Women++ these were:
-..* Percentage of women attending event
-..* Ratio of applicants to spaces (how “popular” your event was)
-..* Attendance rate
-..* Number of mentors per person
-..* Number of community partners, sponsors involved in the event, scaled to the size of the event
-..* Cost of the event per participant (cost includes financial and resource cost)
-..* Impact score taken from our post-event survey
-*We provide impact targets for each of these factors/KPIs (which are customisable, if the NPO wants to set targets themself)
+  * Percentage of women attending event
+  * Ratio of applicants to spaces (how “popular” your event was)
+  * Attendance rate
+  * Number of mentors per person
+  * Number of community partners, sponsors involved in the event, scaled to the size of the event
+  * Cost of the event per participant (cost includes financial and resource cost)
+  * Impact score taken from our post-event survey
+* We provide impact targets for each of these factors/KPIs (which are customisable, if the NPO wants to set targets themselves)
 * The algorithm then gives you single measurement that combines all of these factors/KPIs, by normalising all inputs using the "target" values, then taking an average, and multiplying by 10
 * If you hit all the targets, you get an impact score of 10 (get a score lower/higher than 10 if you don’t achieve the targets or exceed them, respectively)
 
