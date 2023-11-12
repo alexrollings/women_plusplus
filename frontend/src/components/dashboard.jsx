@@ -17,6 +17,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems, secondaryListItems } from "./listItems";
 import Initiatives from "./Initiatives";
+import Title from "./Title";
+import { Stack } from "@mui/material";
 
 function Copyright(props) {
   return (
@@ -86,10 +88,10 @@ const Drawer = styled(MuiDrawer, {
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#FF5733",
+      main: "#7E52A0",
     },
     secondary: {
-      main: "#E0C2FF",
+      main: "#58A4B0",
     },
   },
 });
@@ -168,34 +170,111 @@ export default function Navigation() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                >
-                  {/* <Chart /> */}
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
+            <Title>Key Statistics</Title>
+            2022 to date
+            <Stack spacing={2} direction="row-reverse">
+              <img src="/icons/faviconIP.png" />
+              Heart Rate
+            </Stack>
+            <Grid container spacing={3} sx={{ mt: 0, mb: 2 }}>
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
-                    height: 240,
+                    height: 200,
                   }}
                 >
-                  {/* <Deposits /> */}
+                  <Stack
+                    direction="column"
+                    justifyContent="flex-start"
+                    alignItems="center"
+                    spacing={2}
+                  >
+                    <Typography variant="h1" component="div">
+                      12
+                    </Typography>
+                    <Typography variant="h7" component="div">
+                      Initiatives
+                    </Typography>
+                  </Stack>
                 </Paper>
               </Grid>
-              {/* Recent Orders */}
+              <Grid item xs={12} md={4} lg={3}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: "flex",
+                    flexDirection: "column",
+                    height: 200,
+                  }}
+                >
+                  <Stack
+                    direction="column"
+                    justifyContent="flex-start"
+                    alignItems="center"
+                    spacing={2}
+                  >
+                    <Typography variant="h1" component="div">
+                      200
+                    </Typography>
+                    <Typography variant="h7" component="div">
+                      Voulenteer hours used
+                    </Typography>
+                  </Stack>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} md={4} lg={3}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: "flex",
+                    flexDirection: "column",
+                    height: 200,
+                  }}
+                >
+                  <Stack
+                    direction="column"
+                    justifyContent="flex-start"
+                    alignItems="center"
+                    spacing={2}
+                  >
+                    <Typography variant="h1" component="div">
+                      12k
+                    </Typography>
+                    <Typography variant="h7" component="div">
+                      Total Spent
+                    </Typography>
+                  </Stack>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} md={4} lg={3} sx={{backgroundColor: theme.secondary}}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: "flex",
+                    flexDirection: "column",
+                    height: 200,
+
+                  }}
+                >
+                  <Stack
+                    direction="column"
+                    justifyContent="flex-start"
+                    alignItems="center"
+                    spacing={2}
+                  >
+                    <Typography variant="h1" component="div">
+                      6.7
+                    </Typography>
+                    <Typography variant="h7" component="div">
+                      Average Score
+                    </Typography>
+                  </Stack>
+                </Paper>
+              </Grid>
+
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
                   <Initiatives />

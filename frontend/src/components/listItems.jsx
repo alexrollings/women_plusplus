@@ -22,12 +22,14 @@ export const mainListItems = (
         <ListItemText primary="Dashboard" />
       </ListItemButton>
     </Link>
+    <Link href="/goals" underline="none" color="black">
     <ListItemButton>
       <ListItemIcon>
         <SportsScoreIcon />
       </ListItemIcon>
       <ListItemText primary="Goals" />
     </ListItemButton>
+    </Link>
     <Link href="/initiatives" underline="none" color="black">
       <ListItemButton>
         <ListItemIcon>

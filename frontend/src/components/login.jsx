@@ -16,8 +16,16 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 
-const defaultTheme = createTheme();
-
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#7E52A0",
+    },
+    secondary: {
+      main: "#58A4B0",
+    },
+  },
+});
 export default function SignIn() {
   const history = useHistory();
   const handleSubmit = (event) => {
@@ -26,7 +34,7 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
