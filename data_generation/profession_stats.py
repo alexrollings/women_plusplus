@@ -89,7 +89,7 @@ if __name__ == "__main__":
     fig.update_layout(
         title_text='Employees in Technical Roles in Switzerland (1991-2023)',
         title_font=dict(size=32), # Change the font size of the title
-        legend=dict(x=0.02, y=1, font=dict(size=22)) # Move the legend to the top left corner and change its size
+        legend=dict(x=0.02, y=1, font=dict(size=24)) # Move the legend to the top left corner and change its size
     )
     fig.update_xaxes(tickfont=dict(size=22)) # Change the font size of the x axis labels
     fig.update_yaxes(tickfont=dict(size=22)) # Change the font size of the y axis labels
