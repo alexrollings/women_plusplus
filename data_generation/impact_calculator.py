@@ -121,3 +121,9 @@ survey_score_w = round(survey_df_w.impact.mean(), 1)
 impact_score_w = calculateImpactScore(applicants_w, spaces_w, participants_w, female_participants_w, mentors_w, sponsors_w, community_partners_w, cost_w, resource_cost_w, survey_score_w)
 print(impact_score_w)
 impact_scores_dict["Talk"] = impact_score_w
+
+import json
+
+# Save the dictionary to a JSON file
+with open('data/impact_scores.json', 'w') as f:
+    json.dump(impact_scores_dict, f)
