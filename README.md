@@ -1,5 +1,11 @@
 # [Hack n Lead](https://womenplusplus.ch/hacknlead)
 
+## Figma Prototype
+
+Prototype link:  https://www.figma.com/file/t1fVqozFmvs1RQOwPW0JGX/ImpactPulse?type=design&node-id=74%3A465&mode=design&t=GqXwtpQy2mzpS3YU-1
+
+To play prototype: https://www.figma.com/proto/t1fVqozFmvs1RQOwPW0JGX/ImpactPulse?type=design&node-id=[…]ling=min-zoom&page-id=74%3A465&starting-point-node-id=74%3A466
+
 ===
 ### Frontend Built With
 Vite.js, React,js, MaterialUI
